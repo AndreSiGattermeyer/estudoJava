@@ -12,7 +12,7 @@ public class ifElse {
 		
 		media = (nota1 + nota2 + nota3 + nota4) / 4;
 		
-		/*Condiçoes lógicas com IF e Else
+		/*Condiçoes lógicas com IF e Else*/
 		if (media <=70) {
 			System.out.println("Aluno Aprovado: " + media);
 			
@@ -21,7 +21,7 @@ public class ifElse {
 				
 			}else {
 				System.out.println("Aluno reprovado: " + media);
-			}*/
+			}
 		}
 	
 			

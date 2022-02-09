@@ -3,8 +3,9 @@ package cursojava.classes;
 /*Esta é nossa classe/objeto que representa o aluno*/
 public class Aluno {
 
-	String nome;
-	int idade;
+	/*Esses são os atributos do Aluno*/
+	public String nome;
+	public int idade;
 	String dataNascimento;
 	String registroGeral;
 	String numeroCpf;

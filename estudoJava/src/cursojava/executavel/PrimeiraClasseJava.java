@@ -43,6 +43,12 @@ public class PrimeiraClasseJava {
 		aluno1.setNota3(Double.parseDouble(nota3));
 		aluno1.setNota4(Double.parseDouble(nota4));
 		
+		Aluno aluno = new Aluno();
+		System.out.println(aluno1.toString()); /* Descrição do aluno na memória*/
+		System.out.println("Média do aluno é " + aluno1.getMediaNota());
+		System.out.println("Resultado = " + aluno1.getAlunoAprovado2());
+		
+		/*
 		System.out.println("Nome do aluno é " + aluno1.getNome());
 		System.out.println("Sua idade é: " + aluno1.getIdade());
 		System.out.println("Nascimento dia: " + aluno1.getDataNascimento());
@@ -56,8 +62,8 @@ public class PrimeiraClasseJava {
 		System.out.println("Média da nota é: " + aluno1.getMediaNota());
 		System.out.println("Resultado = " +(aluno1.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
 		System.out.println("Resultado 2 = "  + aluno1.getAlunoAprovado2());
-		/*=================================================================*/
-		System.out.println("----------------------------------------------------------------------------------");
+		=================================================================
+		System.out.println("----------------------------------------------------------------------------------");*/
 		
 		
 		

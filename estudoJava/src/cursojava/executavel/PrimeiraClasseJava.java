@@ -41,29 +41,31 @@ public class PrimeiraClasseJava {
 		aluno1.setNota1(Double.parseDouble(nota1));
 		aluno1.setNota2(Double.parseDouble(nota2));
 		aluno1.setNota3(Double.parseDouble(nota3));
-		aluno1.setNota4(Double.parseDouble(nota4));
+		aluno1.setNota4(Double.parseDouble(nota4)); 
 		
 		Aluno aluno = new Aluno();
 		System.out.println(aluno1.toString()); /* Descrição do aluno na memória*/
 		System.out.println("Média do aluno é " + aluno1.getMediaNota());
 		System.out.println("Resultado = " + aluno1.getAlunoAprovado2());
 		
-		/*
-		System.out.println("Nome do aluno é " + aluno1.getNome());
-		System.out.println("Sua idade é: " + aluno1.getIdade());
-		System.out.println("Nascimento dia: " + aluno1.getDataNascimento());
-		System.out.println("Seu RG é: " + aluno1.getRegistroGeral());
-		System.out.println("Seu CPF é: " + aluno1.getNumeroCpf());
-		System.out.println("O nome de sua mão é: " + aluno1.getNomeMae());
-		System.out.println("O nome de sua mão é: " + aluno1.getNomePai());
-		System.out.println("Matrícula desde: " + aluno1.getDataMatricula());
-		System.out.println("Estuda na escola: "+ aluno1.getNomeEscola());
-		System.out.println("Atualmente está na: " + aluno1.getSerieMatriculado() + " série");
-		System.out.println("Média da nota é: " + aluno1.getMediaNota());
-		System.out.println("Resultado = " +(aluno1.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
-		System.out.println("Resultado 2 = "  + aluno1.getAlunoAprovado2());
-		=================================================================
-		System.out.println("----------------------------------------------------------------------------------");*/
+		
+		/* Equals e hashcode (Diferenciar e comparar objetos)*/
+		Aluno aluno2 = new Aluno();
+		aluno2.setNome("André");
+		aluno2.setNumeroCpf("123");
+		
+		Aluno aluno3 = new Aluno();
+		aluno3.setNome("André");
+		aluno3.setNumeroCpf("125");
+		
+		if (aluno2.equals(aluno3)) {
+			System.out.println("Alunos são iguais");
+		}else {
+			System.out.println("Alunos não são iguais");
+		}
+		
+		
+		
 		
 		
 		

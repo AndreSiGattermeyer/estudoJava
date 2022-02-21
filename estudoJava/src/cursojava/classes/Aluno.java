@@ -48,10 +48,10 @@ public class Aluno {
 	/*Método que retorna TRUE para aprovado e FALSE para reprovado*/
 	public boolean getAlunoAprovado() {
 		double media = this.getMediaNota();
-		if (media >= 70) {
+		if (media >= 70) { /*Aprovado*/
 			return true;
 		}else {
-			return false;
+			return false;/*Reprovado*/
 		}
 	}
 	
@@ -81,11 +81,15 @@ public class Aluno {
 
 	public String getAlunoAprovado2() {
 		double media = this.getMediaNota();
-		if (media >= 70) {
+		if (media >= 50) { /*Reprovado*/
+			if (media >= 70) {
 			return "Aluno está aprovado";
 		}else {
-			return "Aluno está reprovado";
+			return "Aluno em recuperação";
 		}
+	}else {
+		return "Aluno está reprovado";
+				}
 	}
 	
 	

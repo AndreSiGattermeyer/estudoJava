@@ -1,5 +1,8 @@
 package cursojava.executavel;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
@@ -8,11 +11,14 @@ import cursojava.classes.Disciplina;
 public class PrimeiraClasseJava {
 
 	public static void main(String[] args) {
+		List<Aluno> alunos = new ArrayList<Aluno>();
+		
+		for (int qtd = 1 ; qtd <=2; qtd++) {
 		
 		/*new aluno() é uma instância (criação de objeto)*/
 		/*aluno1 é uma referencia para o objeto aluno*/
 		
-		String nome = JOptionPane.showInputDialog("Qual é o nome do aluno(a)?");
+		String nome = JOptionPane.showInputDialog("Qual é o nome do aluno(a)" +qtd+ "?");
 		String idade = JOptionPane.showInputDialog("Qual é a idade do aluno(a)?");
 		String dataNascimento = JOptionPane.showInputDialog("Qual é a data de nascimento do aluno(a)?");
 		String registroGeral = JOptionPane.showInputDialog("Qual é o RG do aluno(a)?");
@@ -64,14 +70,25 @@ public class PrimeiraClasseJava {
 			}
 		}
 		
-		System.out.println(aluno1.toString()); /* Descrição do objeto na memória*/
-		System.out.println("Média do aluno é " + aluno1.getMediaNota());
-		System.out.println("Resultado = " + aluno1.getAlunoAprovado2());
+		alunos.add(aluno1);
+	}
 		
+		for (Aluno aluno : alunos) {
+			
+			System.out.println(aluno.toString()); /* Descrição do objeto na memória*/
+			System.out.println("Média do aluno é " + aluno.getMediaNota());
+			System.out.println("Resultado = " + aluno.getAlunoAprovado2());
+			System.out.println("----------------------------------------------------------------");
+			
+		}
+	
 		
 	}
+		
+}	
 	
-}
+	
+
 
 		
 		

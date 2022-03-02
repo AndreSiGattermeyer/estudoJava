@@ -77,6 +77,20 @@ public class PrimeiraClasseJava {
 			
 			Aluno aluno = alunos.get(pos);
 			
+			if (aluno.getNome().equals("andre")) {
+				Aluno trocar = new Aluno();
+				trocar.setNome("Aluno foi trocado");
+				
+				Disciplina disciplina = new Disciplina();
+				disciplina.setDisciplina("Matemática");
+				disciplina.setNota(96);
+				
+				trocar.getDisciplinas().add(disciplina);
+				
+				alunos.set(pos, trocar);
+				aluno = alunos.get(pos);
+			}
+			
 			System.out.println("Aluno = " + aluno.getNome());
 			System.out.println("Média do aluno =" + aluno.getMediaNota());
 			System.out.println("Resultado = " + aluno.getAlunoAprovado2());

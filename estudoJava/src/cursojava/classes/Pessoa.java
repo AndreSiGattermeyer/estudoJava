@@ -1,5 +1,6 @@
 package cursojava.classes;
 
+/*Classe Pai ou super classe ou classe master- atributos comuns a todos os objetos filhos*/
 public class Pessoa {
 
 	protected String nome;

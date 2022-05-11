@@ -7,6 +7,7 @@ import java.util.Objects;
 import cursojava.constantes.StatusAluno;
 
 /*Esta é nossa classe/objeto que representa o aluno*/
+/*Classe filha de pessoa*/
 public class Aluno  extends Pessoa {
 
 	/*Esses são os atributos do Aluno*/

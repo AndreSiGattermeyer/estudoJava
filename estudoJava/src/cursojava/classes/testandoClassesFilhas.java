@@ -27,6 +27,9 @@ public class testandoClassesFilhas {
 		System.out.println(aluno.pessoaMaiorIdade() +  " - " + aluno.msgMaiorIdade() );
 		System.out.println(diretor.pessoaMaiorIdade());
 		System.out.println(secretario.pessoaMaiorIdade());
+		
+		Aluno aluno2 = new Aluno();
+		
 	}
 	
 }

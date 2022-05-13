@@ -1,7 +1,7 @@
 package cursojava.classes;
 
 /*Classe filha de pessoa*/
-public class Secretario extends Pessoa {
+	public class Secretario extends Pessoa {
 
 	private String registro;
 	private String nivelCargo;
@@ -36,6 +36,11 @@ public class Secretario extends Pessoa {
 				+ ", getNumeroCpf()=" + getNumeroCpf() + ", getNomeMae()=" + getNomeMae() + ", getNomePai()="
 				+ getNomePai() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
 				+ super.toString() + "]";
+	}
+	@Override
+	public double salario() {
+		return 1800.80 * 0.9;
+		
 	}
 	
 	

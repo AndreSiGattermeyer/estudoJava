@@ -32,6 +32,19 @@ public class testandoClassesFilhas {
 		System.out.println("Salário diretor é = "  + diretor.salario());
 		System.out.println("Salário do secretário é = "  + secretario.salario());
 		
+		Pessoa pessoa = new Aluno();
+		
+		pessoa = secretario;
+		
+		teste(aluno);
+		teste(diretor);
+		teste(secretario);
+		
+	}
+	
+	public static void teste (Pessoa pessoa) {
+		System.out.println("Essa pessoa é demais = " + pessoa.getNome() 
+		+ " e o salário é = " + pessoa.salario());
 	}
 	
 }

@@ -43,7 +43,7 @@ public class testandoClassesFilhas {
 	}
 	
 	public static void teste (Pessoa pessoa) {
-		System.out.println("Essa pessoa é demais = " + pessoa.getNome() 
+		System.out.println(pessoa.getNome() + ", essa pessoa é demais "
 		+ " e o salário é = " + pessoa.salario());
 	}
 	

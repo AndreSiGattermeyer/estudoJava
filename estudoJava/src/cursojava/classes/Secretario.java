@@ -7,9 +7,7 @@ package cursojava.classes;
 	private String nivelCargo;
 	private String experiencia;
 	
-	private String login;
 	
-	private String senha;
 	
 	public String getRegistro() {
 		return registro;
@@ -48,22 +46,18 @@ package cursojava.classes;
 	}
 	
 	/*Esser é o metodo do contrato de autenticação*/
-	public boolean autenticar() {
-		
+	public boolean autenticar(String login, String senha) {
+		// TODO Auto-generated method stub
 		return login.equals("admin") && senha.equals("admin");
 	}
-	public String getLogin() {
-		return login;
+	@Override
+	public boolean autenticar() {
+		// TODO Auto-generated method stub
+		return false;
 	}
-	public void setLogin(String login) {
-		this.login = login;
-	}
-	public String getSenha() {
-		return senha;
-	}
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
+	
+
+	
 	
 	
 }

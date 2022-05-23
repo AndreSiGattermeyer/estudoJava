@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
+import cursojava.classes.PermitirAcesso;
 import cursojava.classes.Secretario;
 import cursojava.constantes.StatusAluno;
 
@@ -18,11 +19,10 @@ public class PrimeiraClasseJava {
 		String login = JOptionPane.showInputDialog("Informe o Login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 		
-		Secretario secretario = new Secretario();
-		secretario.setLogin(login);
-		secretario.setSenha(senha);
 		
-		if (secretario.autenticar()) { /*se TRUE acessa, se FALSE não acessa*/
+		
+		
+		if (new Secretario().autenticar (login, senha)) { /*se TRUE acessa, se FALSE não acessa*/
 		
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
@@ -52,7 +52,7 @@ public class PrimeiraClasseJava {
 		Aluno aluno1 = new Aluno();
 		
 		aluno1.setNome(nome);
-		aluno1.setIdade(Integer.valueOf(idade)); /*Converte STRING em INT*/
+		aluno1.setIdade(Integer.valueOf(idade));
 		aluno1.setDataNascimento(dataNascimento);
 		aluno1.setRegistroGeral(registroGeral);
 		aluno1.setNumeroCpf(Cpf);
@@ -60,7 +60,7 @@ public class PrimeiraClasseJava {
 		aluno1.setNomePai(pai);
 		aluno1.setDataMatricula(matricula);
 		aluno1.setSerieMatriculado(serie);
-		aluno1.setNomeEscola(escola);
+		aluno1.setNomeEscola(escola); 
 		
 		for (int pos = 1;  pos <= 4; pos++) { /* 4 seria o número de disciplinas, podendo aumentar de acordo com elas*/
 			String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina"+ pos +" ?");

@@ -19,10 +19,10 @@ public class PrimeiraClasseJava {
 		String login = JOptionPane.showInputDialog("Informe o Login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 		
+		PermitirAcesso permitirAcesso = new Secretario(login, senha);
 		
 		
-		
-		if (new Secretario().autenticar (login, senha)) { /*se TRUE acessa, se FALSE não acessa*/
+		if (permitirAcesso.autenticar(login, senha)) { /*se TRUE acessa, se FALSE não acessa*/
 		
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
@@ -52,7 +52,7 @@ public class PrimeiraClasseJava {
 		Aluno aluno1 = new Aluno();
 		
 		aluno1.setNome(nome);
-		aluno1.setIdade(Integer.valueOf(idade));
+		aluno1.setIdade(Integer.valueOf (idade));
 		aluno1.setDataNascimento(dataNascimento);
 		aluno1.setRegistroGeral(registroGeral);
 		aluno1.setNumeroCpf(Cpf);

@@ -13,7 +13,7 @@ public class caractereChar {
 		
 			char pessoaFeminino = 'F';
 			
-			if(pessoaFeminino == 'F') {
+			if(pessoaFeminino == 'M') {
 				System.out.println("Feminino");
 			}else {
 				System.out.println("Masculino");

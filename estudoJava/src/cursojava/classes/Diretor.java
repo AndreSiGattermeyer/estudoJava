@@ -1,11 +1,24 @@
 package cursojava.classes;
 
 /*Classe filha de pessoa*/
-public class Diretor extends Pessoa {
+public class Diretor extends Pessoa implements PermitirAcesso {
 
 	private String registroEducacao;
 	private int tempoDirecao;
 	private String titulacao;
+	
+	private String login;
+	private String senha;
+	
+	public Diretor(String login, String senha) {
+		this.login = login;
+		this.senha = senha;
+	}
+	
+	public Diretor() {
+		
+	}
+	
 	public String getRegistroEducacao() {
 		return registroEducacao;
 	}
@@ -42,7 +55,17 @@ public class Diretor extends Pessoa {
 		
 	}
 	
-	
+	/*Esser é o metodo do contrato de autenticação*/
+	public boolean autenticar(String login, String senha) {
+			this.login = login;
+			this.senha = senha;
+			return autenticar();
+		
+	}
+
+	public boolean autenticar() {
+			return login.equals("aelras") && senha.equals("123");
+	}
 	
 	
 }

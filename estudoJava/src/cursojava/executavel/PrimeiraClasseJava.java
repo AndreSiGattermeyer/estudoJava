@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import com.sun.source.tree.CatchTree;
+
 import cursojava.classes.Aluno;
 import cursojava.classes.Diretor;
 import cursojava.classes.Disciplina;
@@ -21,6 +23,8 @@ public class PrimeiraClasseJava {
 
 	public static void main(String[] args) {
 		
+		try {
+		
 		String login = JOptionPane.showInputDialog("Informe o Login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 		
@@ -31,20 +35,20 @@ public class PrimeiraClasseJava {
 		
 		if (new FuncaoAutenticacao(new Diretor(login, senha)).autenticar()) { /*Vou travar o contrato para autorizar somente para quem realmente tem o contrato 100% legitimo*/
 		
-		List<Aluno> alunos = new ArrayList<Aluno>();
+		List<Aluno> alunos = null;
 		
 		/*É uma lista que dentro dela temos uma chave que identifica uma sequência de valores também*/
 		HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 		
 
 	
-		for (int qtd = 1 ; qtd <=5; qtd++) {
+		for (int qtd = 1 ; qtd <=2; qtd++) {
 		
 		/*new aluno() é uma instância (criação de objeto)*/
 		/*aluno1 é uma referencia para o objeto aluno*/
 		
 		String nome = JOptionPane.showInputDialog("Qual é o nome do aluno(a)" +qtd+ "?");
-		String idade = JOptionPane.showInputDialog("Qual é a idade do aluno(a)?");
+		/*String idade = JOptionPane.showInputDialog("Qual é a idade do aluno(a)?");
 		String dataNascimento = JOptionPane.showInputDialog("Qual é a data de nascimento do aluno(a)?");
 		String registroGeral = JOptionPane.showInputDialog("Qual é o RG do aluno(a)?");
 		String Cpf = JOptionPane.showInputDialog("Qual é o CPF do aluno(a)?");
@@ -53,13 +57,13 @@ public class PrimeiraClasseJava {
 		String matricula = JOptionPane.showInputDialog("Qual é data da matrícula do aluno(a)?");
 		String escola = JOptionPane.showInputDialog("Qual é o nome da escola aluno(a)?");
 		String serie = JOptionPane.showInputDialog("Qual é a série do aluno(a) está matriculado(a)?");
-		
+		*/
 		
 		
 		Aluno aluno1 = new Aluno();
 		
 		aluno1.setNome(nome);
-		aluno1.setIdade(Integer.valueOf (idade));
+		/*aluno1.setIdade(Integer.valueOf (idade));
 		aluno1.setDataNascimento(dataNascimento);
 		aluno1.setRegistroGeral(registroGeral);
 		aluno1.setNumeroCpf(Cpf);
@@ -67,9 +71,9 @@ public class PrimeiraClasseJava {
 		aluno1.setNomePai(pai);
 		aluno1.setDataMatricula(matricula);
 		aluno1.setSerieMatriculado(serie);
-		aluno1.setNomeEscola(escola); 
+		aluno1.setNomeEscola(escola); */
 		
-		for (int pos = 1;  pos <= 4; pos++) { /* 4 seria o número de disciplinas, podendo aumentar de acordo com elas*/
+		for (int pos = 1;  pos <= 1; pos++) { /* 4 seria o número de disciplinas, podendo aumentar de acordo com elas*/
 			String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina"+ pos +" ?");
 			String notaDisciplina = JOptionPane.showInputDialog("Nota da disciplina" + pos +" ?");
 			
@@ -95,6 +99,7 @@ public class PrimeiraClasseJava {
 			}
 		}
 		
+		System.out.println("Aqui o ERRO");
 		alunos.add(aluno1);
 	}
 		
@@ -137,7 +142,28 @@ public class PrimeiraClasseJava {
 	}else {
 		JOptionPane.showMessageDialog(null, "Acesso não permitido");
 	}
+		}catch (Exception e) {
+			
+			StringBuilder saida = new StringBuilder();
+			
+			/*Imprime erro no console do java*/
+			e.printStackTrace(); 
+			
+			/*Mensagem do erro ou causa*/
+			System.out.println("Mensagem: "  + e.getMessage());
+			
+			for (int pos = 0;  pos < e.getStackTrace().length; pos++) {
+				
+				saida.append("\n Classe de erro : " + e.getStackTrace()[pos].getClassName());
+				saida.append("\n Método de erro : " + e.getStackTrace()[pos].getMethodName());
+				saida.append("\n Linha de erro : " + e.getStackTrace()[pos].getLineNumber());
+				
+			}
+			
+			JOptionPane.showMessageDialog(null, "Erro ao processar notas" + saida.toString());
+		}
 }	
+	
 }
 	
 	

@@ -18,7 +18,8 @@ import cursojava.constantes.StatusAluno;
 
 public class PrimeiraClasseJava {
 
-	private static PermitirAcesso permitirAcesso;
+	private static PermitirAcesso permitirAcesso ;
+	private static int idade ;
 	
 
 	public static void main(String[] args) {
@@ -35,21 +36,21 @@ public class PrimeiraClasseJava {
 		
 		if (new FuncaoAutenticacao(new Diretor(login, senha)).autenticar()) { /*Vou travar o contrato para autorizar somente para quem realmente tem o contrato 100% legitimo*/
 		
-		List<Aluno> alunos = null;
+		List<Aluno> alunos = new ArrayList<Aluno>();
 		
 		/*É uma lista que dentro dela temos uma chave que identifica uma sequência de valores também*/
 		HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 		
 
 	
-		for (int qtd = 1 ; qtd <=2; qtd++) {
+		for (int qtd = 1 ; qtd <=1; qtd++) {
 		
 		/*new aluno() é uma instância (criação de objeto)*/
 		/*aluno1 é uma referencia para o objeto aluno*/
 		
 		String nome = JOptionPane.showInputDialog("Qual é o nome do aluno(a)" +qtd+ "?");
-		/*String idade = JOptionPane.showInputDialog("Qual é a idade do aluno(a)?");
-		String dataNascimento = JOptionPane.showInputDialog("Qual é a data de nascimento do aluno(a)?");
+		String idade = JOptionPane.showInputDialog("Qual é a idade do aluno(a)?");
+		/*String dataNascimento = JOptionPane.showInputDialog("Qual é a data de nascimento do aluno(a)?");
 		String registroGeral = JOptionPane.showInputDialog("Qual é o RG do aluno(a)?");
 		String Cpf = JOptionPane.showInputDialog("Qual é o CPF do aluno(a)?");
 		String mae = JOptionPane.showInputDialog("Qual é o nome da mãe do aluno(a)?");
@@ -63,7 +64,8 @@ public class PrimeiraClasseJava {
 		Aluno aluno1 = new Aluno();
 		
 		aluno1.setNome(nome);
-		/*aluno1.setIdade(Integer.valueOf (idade));
+		aluno1.setIdade(Integer.valueOf (idade));
+		/*
 		aluno1.setDataNascimento(dataNascimento);
 		aluno1.setRegistroGeral(registroGeral);
 		aluno1.setNumeroCpf(Cpf);
@@ -99,7 +101,7 @@ public class PrimeiraClasseJava {
 			}
 		}
 		
-		System.out.println("Aqui o ERRO");
+		
 		alunos.add(aluno1);
 	}
 		
@@ -142,7 +144,7 @@ public class PrimeiraClasseJava {
 	}else {
 		JOptionPane.showMessageDialog(null, "Acesso não permitido");
 	}
-		}catch (Exception e) {
+		}catch (NumberFormatException e) {
 			
 			StringBuilder saida = new StringBuilder();
 			
@@ -157,10 +159,16 @@ public class PrimeiraClasseJava {
 				saida.append("\n Classe de erro : " + e.getStackTrace()[pos].getClassName());
 				saida.append("\n Método de erro : " + e.getStackTrace()[pos].getMethodName());
 				saida.append("\n Linha de erro : " + e.getStackTrace()[pos].getLineNumber());
+				saida.append("\n Linha de erro : " + e.getClass().getName());
 				
 			}
 			
-			JOptionPane.showMessageDialog(null, "Erro ao processar notas" + saida.toString());
+			JOptionPane.showMessageDialog(null, "Erro conversão de numero" + saida.toString());
+		}catch (NullPointerException e) {
+			JOptionPane.showMessageDialog(null, "Opaa um null pointer exception" + e.getClass());
+			
+		}catch (Exception e) {
+			e.printStackTrace();
 		}
 }	
 	

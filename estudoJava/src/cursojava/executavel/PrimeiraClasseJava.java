@@ -2,6 +2,7 @@ package cursojava.executavel;
 
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,6 +12,7 @@ import javax.swing.JOptionPane;
 
 import com.sun.source.tree.CatchTree;
 
+import curso.java.excecao.ExcessaoProcessarNota;
 import cursojava.classes.Aluno;
 import cursojava.classes.Diretor;
 import cursojava.classes.Disciplina;
@@ -29,9 +31,12 @@ public class PrimeiraClasseJava {
 		
 		try {
 			
-			File fil = new File("c:\\lines.txt");
+			try {   // O arquivo certo é lines.txt
+			File fil = new File("c://line.txt");
 			Scanner scanner = new Scanner(fil);
-			
+			}catch (FileNotFoundException e) {
+				throw new ExcessaoProcessarNota(e.getMessage());
+			}
 		
 		String login = JOptionPane.showInputDialog("Informe o Login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");

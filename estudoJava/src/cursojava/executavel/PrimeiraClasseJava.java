@@ -32,7 +32,7 @@ public class PrimeiraClasseJava {
 		try {
 			
 			try {   // O arquivo certo é lines.txt
-			File fil = new File("c://line.txt");
+			File fil = new File("c://lines.txt");
 			Scanner scanner = new Scanner(fil);
 			}catch (FileNotFoundException e) {
 				throw new ExcessaoProcessarNota(e.getMessage());

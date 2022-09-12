@@ -88,12 +88,13 @@ public class PrimeiraClasseJava {
 		aluno1.setNomeEscola(escola); */
 		
 		for (int pos = 1;  pos <= 1; pos++) { /* 4 seria o número de disciplinas, podendo aumentar de acordo com elas*/
+			
 			String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina"+ pos +" ?");
 			String notaDisciplina = JOptionPane.showInputDialog("Nota da disciplina" + pos +" ?");
 			
 			Disciplina disciplina = new Disciplina();
 			disciplina.setDisciplina(nomeDisciplina);
-			disciplina.setNota(Double.valueOf(notaDisciplina));
+			//disciplina.setNota(Double.valueOf(notaDisciplina));
 			
 			aluno1.getDisciplinas().add(disciplina);
 		}

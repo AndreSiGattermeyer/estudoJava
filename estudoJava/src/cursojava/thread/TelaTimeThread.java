@@ -107,7 +107,7 @@ public class TelaTimeThread extends JDialog {
 				}
 			});
 			
-			jButton2.addActionListener(new ActionListener() {
+			  jButton2.addActionListener(new ActionListener() {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {

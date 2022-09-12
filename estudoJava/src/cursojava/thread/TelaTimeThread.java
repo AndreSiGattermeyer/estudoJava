@@ -112,8 +112,8 @@ public class TelaTimeThread extends JDialog {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 				
-					fila.stop();
-					fila = null;
+					 fila.stop();
+					 fila = null;
 				
 					
 				}

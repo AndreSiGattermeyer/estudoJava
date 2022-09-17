@@ -15,8 +15,9 @@ public class DatasEmJava {
 			
 			Date dataAtualHoje = simpleDateFormat.parse("11/09/2022");
 			
-			
-			if (dataVencimentoBoleto.before(dataAtualHoje)) { 
+			// After : se data 1 é maior que data 2
+			//Before : Se data 1 é menor que data 2
+			if (dataVencimentoBoleto.before(dataAtualHoje)) { /* SE data 1 é menor que data 2*/
 				System.out.println("Boleto vencido -URGENTE");
 			}else {
 				System.out.println("Boleto não vencido  ");

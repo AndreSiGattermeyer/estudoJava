@@ -96,7 +96,7 @@ public class TelaTimeThread extends JDialog {
 						fila.start();
 					}
 					
-					 for (int qtd = 0; qtd < 100; qtd++) { /*Simulando 100 envios em massa*/
+					 for (int qtd = 0; qtd < 100; qtd ++) { /*Simulando 100 envios em massa*/
 					
 					ObjetoFilaThread filaThread = new ObjetoFilaThread();
 					filaThread.setNome(mostraTempo.getText());

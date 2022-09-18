@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.time.Duration;
 import java.time.Instant;
 
-public class DadosEmJava6 {
+public class DatasEmJava6 {
 	
 	public static void main(String[] args) throws ParseException, InterruptedException{
 		
